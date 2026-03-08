@@ -91,11 +91,7 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
         image-rendering: pixelated;
       }
-      .pixel-text {
-        font-family: 'Press Start 2P', system-ui, sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
+
       .pixel-scrollbar::-webkit-scrollbar {
         width: 12px;
       }
@@ -118,7 +114,7 @@
         <div class="w-12 h-12 bg-accent border-4 border-pixel-border flex items-center justify-center pixel-border">
           <i class="fa fa-cubes text-pixel-border text-xl"></i>
         </div>
-        <h1 class="text-xl font-bold text-pixel-bg pixel-text">恒创拼豆工具</h1>
+        <h1 class="text-xl font-bold text-pixel-bg">恒创拼豆工具</h1>
       </div>
       <div class="flex items-center space-x-4">
         <button id="help-button" class="p-3 bg-pixel-panel border-4 border-pixel-border pixel-button">
@@ -132,10 +128,10 @@
   <main class="container mx-auto py-8 px-4">
     <!-- Navigation Tabs -->
     <div class="mb-8 flex space-x-4">
-      <button class="tab-btn px-6 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm" data-tab="bead-generator">
+      <button class="tab-btn px-6 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm" data-tab="bead-generator">
         <i class="fa fa-image mr-2"></i>拼豆图纸生成
       </button>
-      <button class="tab-btn px-6 py-4 bg-pixel-panel text-pixel-border border-4 border-pixel-border pixel-button pixel-text text-sm" data-tab="inventory-management">
+      <button class="tab-btn px-6 py-4 bg-pixel-panel text-pixel-border border-4 border-pixel-border pixel-button text-sm" data-tab="inventory-management">
         <i class="fa fa-cubes mr-2"></i>库存管理
       </button>
     </div>
@@ -146,7 +142,7 @@
         <!-- Image Upload Section -->
         <div class="pixel-panel rounded-none">
           <div class="bg-secondary p-4 border-b-4 border-pixel-border">
-            <h3 class="text-lg font-bold text-pixel-bg flex items-center pixel-text">
+            <h3 class="text-lg font-bold text-pixel-bg flex items-center">
               <i class="fa fa-upload mr-3"></i>上传图片
             </h3>
           </div>
@@ -158,34 +154,34 @@
                   <div class="w-24 h-24 mx-auto mb-4 bg-accent border-4 border-pixel-border flex items-center justify-center">
                     <i class="fa fa-cloud-upload text-pixel-border text-3xl"></i>
                   </div>
-                  <p class="text-pixel-border mb-2 pixel-text text-sm">点击或拖拽上传图片</p>
-                  <p class="text-pixel-border text-xs pixel-text">支持 JPG、PNG、GIF 格式</p>
+                  <p class="text-pixel-border mb-2 text-sm">点击或拖拽上传图片</p>
+                  <p class="text-pixel-border text-xs">支持 JPG、PNG、GIF 格式</p>
                 </label>
               </div>
             </div>
             
             <div class="mb-6">
-              <label class="block text-sm font-medium text-pixel-border mb-4 pixel-text">图片预览</label>
+              <label class="block text-sm font-medium text-pixel-border mb-4">图片预览</label>
               <div id="image-preview" class="border-4 border-pixel-border bg-pixel-bg min-h-[200px] flex items-center justify-center pixel-border">
-                <p class="text-pixel-border pixel-text text-sm">上传图片后将显示预览</p>
+                <p class="text-pixel-border text-sm">上传图片后将显示预览</p>
               </div>
             </div>
             
             <div class="mb-6">
-              <label class="block text-sm font-medium text-pixel-border mb-4 pixel-text">网格大小</label>
+              <label class="block text-sm font-medium text-pixel-border mb-4">网格大小</label>
               <div class="flex items-center space-x-4">
                 <input type="range" id="grid-size" min="10" max="100" value="30" class="flex-1 h-6 bg-pixel-bg border-4 border-pixel-border pixel-input cursor-pointer">
                 <div class="w-24 text-center bg-pixel-bg border-4 border-pixel-border pixel-border">
-                  <span id="grid-size-value" class="pixel-text text-sm">30x30</span>
+                  <span id="grid-size-value" class="text-sm">30x30</span>
                 </div>
               </div>
-              <div class="flex justify-between text-xs text-pixel-border mt-2 pixel-text">
+              <div class="flex justify-between text-xs text-pixel-border mt-2">
                 <span>10x10</span>
                 <span>100x100</span>
               </div>
             </div>
             
-            <button id="generate-bead-pattern" class="w-full py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+            <button id="generate-bead-pattern" class="w-full py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
               <i class="fa fa-magic mr-3"></i>生成拼豆图纸
             </button>
           </div>
@@ -194,14 +190,14 @@
         <!-- Bead Pattern Result -->
         <div class="pixel-panel rounded-none">
           <div class="bg-secondary p-4 border-b-4 border-pixel-border">
-            <h3 class="text-lg font-bold text-pixel-bg flex items-center pixel-text">
+            <h3 class="text-lg font-bold text-pixel-bg flex items-center">
               <i class="fa fa-cubes mr-3"></i>拼豆图纸结果
             </h3>
           </div>
           <div class="p-6">
             <div class="mb-6">
               <div class="flex justify-between items-center mb-4">
-                <label class="block text-sm font-medium text-pixel-border pixel-text">拼豆图纸预览</label>
+                <label class="block text-sm font-medium text-pixel-border">拼豆图纸预览</label>
                 <div class="flex space-x-2">
                   <button id="preview-zoom-in" class="p-2 bg-pixel-panel border-4 border-pixel-border pixel-button">
                     <i class="fa fa-search-plus text-pixel-border"></i>
@@ -212,22 +208,22 @@
                 </div>
               </div>
               <div id="bead-pattern-preview" class="border-4 border-pixel-border bg-pixel-bg min-h-[200px] overflow-auto pixel-scrollbar pixel-border">
-                <p class="text-pixel-border text-center py-10 pixel-text text-sm">生成图纸后将显示预览</p>
+                <p class="text-pixel-border text-center py-10 text-sm">生成图纸后将显示预览</p>
               </div>
             </div>
             
             <div class="mb-6">
-              <label class="block text-sm font-medium text-pixel-border mb-4 pixel-text">使用的拼豆色号</label>
+              <label class="block text-sm font-medium text-pixel-border mb-4">使用的拼豆色号</label>
               <div id="used-beads" class="border-4 border-pixel-border bg-pixel-bg max-h-[200px] overflow-y-auto pixel-scrollbar pixel-border">
-                <p class="text-pixel-border p-4 pixel-text text-sm">生成图纸后将显示使用的色号</p>
+                <p class="text-pixel-border p-4 text-sm">生成图纸后将显示使用的色号</p>
               </div>
             </div>
             
             <div class="flex space-x-4">
-              <button id="deduct-inventory" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="deduct-inventory" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-minus-circle mr-2"></i>扣除库存
               </button>
-              <button id="export-pattern" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="export-pattern" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-download mr-2"></i>导出图纸
               </button>
             </div>
@@ -239,7 +235,7 @@
     <div class="tab-content hidden" id="inventory-management">
       <div class="pixel-panel rounded-none">
         <div class="bg-secondary p-4 border-b-4 border-pixel-border">
-          <h3 class="text-lg font-bold text-pixel-bg flex items-center pixel-text">
+          <h3 class="text-lg font-bold text-pixel-bg flex items-center">
             <i class="fa fa-cubes mr-3"></i>拼豆库存管理
           </h3>
         </div>
@@ -247,7 +243,7 @@
           <!-- 上传图纸区域 -->
           <div class="mb-6">
             <div class="bg-secondary p-4 border-4 border-pixel-border mb-4">
-              <h4 class="text-lg font-medium text-pixel-bg pixel-text">上传图纸识别色号</h4>
+              <h4 class="text-lg font-medium text-pixel-bg">上传图纸识别色号</h4>
             </div>
             <div class="border-4 border-dashed border-pixel-border bg-pixel-bg p-8 text-center pixel-border mb-4">
               <input type="file" id="inventory-image-upload" accept="image/*" class="hidden">
@@ -255,60 +251,77 @@
                 <div class="w-24 h-24 mx-auto mb-4 bg-accent border-4 border-pixel-border flex items-center justify-center">
                   <i class="fa fa-cloud-upload text-pixel-border text-3xl"></i>
                 </div>
-                <p class="text-pixel-border mb-2 pixel-text text-sm">点击或拖拽上传图纸</p>
-                <p class="text-pixel-border text-xs pixel-text">支持 JPG、PNG、GIF 格式</p>
+                <p class="text-pixel-border mb-2 text-sm">点击或拖拽上传图纸</p>
+                <p class="text-pixel-border text-xs">支持 JPG、PNG、GIF 格式</p>
               </label>
             </div>
             <div id="inventory-image-preview" class="border-4 border-pixel-border bg-pixel-bg min-h-[200px] flex items-center justify-center pixel-border mb-4">
-              <p class="text-pixel-border pixel-text text-sm">上传图片后将显示预览</p>
+              <p class="text-pixel-border text-sm">上传图片后将显示预览</p>
             </div>
             <div class="flex space-x-4 mb-4">
-              <button id="analyze-image" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="analyze-image" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-magic mr-3"></i>分析图纸
               </button>
-              <button id="clear-analysis" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="clear-analysis" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-trash mr-3"></i>清空分析
               </button>
             </div>
             <div id="analyzed-beads" class="border-4 border-pixel-border bg-pixel-bg max-h-[200px] overflow-y-auto pixel-scrollbar pixel-border">
-              <p class="text-pixel-border p-4 pixel-text text-sm">分析图纸后将显示识别的色号</p>
+              <p class="text-pixel-border p-4 text-sm">分析图纸后将显示识别的色号</p>
             </div>
             <div class="flex space-x-4 mt-4">
-              <button id="deduct-inventory-from-image" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="deduct-inventory-from-image" class="flex-1 py-4 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-minus-circle mr-2"></i>扣除库存
               </button>
-              <button id="add-inventory-from-image" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button pixel-text text-sm flex items-center justify-center">
+              <button id="add-inventory-from-image" class="flex-1 py-4 bg-accent text-pixel-border border-4 border-pixel-border pixel-button text-sm flex items-center justify-center">
                 <i class="fa fa-plus-circle mr-2"></i>增加库存
               </button>
+            </div>
+          </div>
+          
+          <!-- 我的拼豆库 -->
+          <div class="mb-6">
+            <div class="bg-secondary p-4 border-4 border-pixel-border mb-4">
+              <h4 class="text-lg font-medium text-pixel-bg">我的拼豆库</h4>
+            </div>
+            <div class="flex space-x-4 mb-4">
+              <div class="flex-1 relative">
+                <input type="text" id="my-beads-search" placeholder="搜索色号..." class="w-full bg-pixel-bg border-4 border-pixel-border pixel-input px-4 py-3 pl-12 focus:outline-none transition-all text-sm">
+                <i class="fa fa-search absolute left-4 top-4 text-pixel-border"></i>
+              </div>
+              <button id="add-to-my-beads" class="px-4 py-3 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm">
+                <i class="fa fa-plus mr-2"></i>添加
+              </button>
+            </div>
+            <div id="my-beads-list" class="border-4 border-pixel-border pixel-border">
+              <div class="bg-secondary text-pixel-bg py-3 px-4 font-medium text-sm text-center">
+                我的拼豆
+              </div>
+              <div id="my-beads-items" class="max-h-[300px] overflow-y-auto pixel-scrollbar bg-pixel-bg grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                <!-- My beads items will be generated here -->
+              </div>
             </div>
           </div>
           
           <!-- 库存列表 -->
           <div class="mb-6">
             <div class="flex justify-between items-center mb-4">
-              <h4 class="text-lg font-medium text-pixel-border pixel-text">库存列表</h4>
-              <button id="reset-inventory" class="px-4 py-2 bg-accent text-pixel-border border-4 border-pixel-border pixel-button pixel-text text-sm">
+              <h4 class="text-lg font-medium text-pixel-border">库存列表</h4>
+              <button id="reset-inventory" class="px-4 py-2 bg-accent text-pixel-border border-4 border-pixel-border pixel-button text-sm">
                 <i class="fa fa-refresh mr-2"></i>重置库存
               </button>
             </div>
             
             <div class="relative">
-              <input type="text" id="inventory-search" placeholder="搜索色号..." class="w-full bg-pixel-bg border-4 border-pixel-border pixel-input px-4 py-3 pl-12 focus:outline-none transition-all pixel-text text-sm">
+              <input type="text" id="inventory-search" placeholder="搜索色号..." class="w-full bg-pixel-bg border-4 border-pixel-border pixel-input px-4 py-3 pl-12 focus:outline-none transition-all text-sm">
               <i class="fa fa-search absolute left-4 top-4 text-pixel-border"></i>
             </div>
             
             <div id="inventory-list" class="mt-4 border-4 border-pixel-border pixel-border">
-              <div class="bg-secondary text-pixel-bg py-3 px-4 flex justify-between items-center font-medium pixel-text text-sm">
-                <div class="flex items-center">
-                  <span class="w-32">色号</span>
-                  <span class="w-32">颜色</span>
-                </div>
-                <div class="flex items-center">
-                  <span class="w-24 text-center">库存数量</span>
-                  <span class="w-48">操作</span>
-                </div>
+              <div class="bg-secondary text-pixel-bg py-3 px-4 font-medium text-sm text-center">
+                库存列表
               </div>
-              <div id="inventory-items" class="max-h-[400px] overflow-y-auto pixel-scrollbar bg-pixel-bg">
+              <div id="inventory-items" class="max-h-[400px] overflow-y-auto pixel-scrollbar bg-pixel-bg grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
                 <!-- Inventory items will be generated here -->
               </div>
             </div>
@@ -323,7 +336,7 @@
     <div class="bg-pixel-panel border-4 border-pixel-border pixel-border max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto pixel-scrollbar">
       <div class="p-6 border-b-4 border-pixel-border bg-secondary">
         <div class="flex justify-between items-center">
-          <h2 class="text-xl font-bold text-pixel-bg pixel-text">如何使用恒创拼豆工具</h2>
+          <h2 class="text-xl font-bold text-pixel-bg">如何使用恒创拼豆工具</h2>
           <button id="close-help" class="p-2 bg-pixel-panel border-2 border-pixel-border pixel-button">
             <i class="fa fa-times text-pixel-border"></i>
           </button>
@@ -331,16 +344,16 @@
       </div>
       <div class="p-6 space-y-6">
         <div>
-          <h3 class="text-lg font-bold text-primary mb-4 pixel-text">1. 拼豆图纸生成</h3>
-          <p class="text-pixel-border pixel-text text-sm">上传图片后，系统会自动将图片转换为拼豆图纸，并计算需要使用的色号和数量。</p>
+          <h3 class="text-lg font-bold text-primary mb-4">1. 拼豆图纸生成</h3>
+          <p class="text-pixel-border text-sm">上传图片后，系统会自动将图片转换为拼豆图纸，并计算需要使用的色号和数量。</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-primary mb-4 pixel-text">2. 库存管理</h3>
-          <p class="text-pixel-border pixel-text text-sm">系统默认每个色号有1000颗拼豆。您可以通过增减按钮手动调整库存数量，也可以通过上传图纸自动扣除使用的拼豆数量。</p>
+          <h3 class="text-lg font-bold text-primary mb-4">2. 库存管理</h3>
+          <p class="text-pixel-border text-sm">系统默认每个色号有1000颗拼豆。您可以通过增减按钮手动调整库存数量，也可以通过上传图纸自动扣除使用的拼豆数量。</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-primary mb-4 pixel-text">3. 操作步骤</h3>
-          <ol class="list-decimal list-inside text-pixel-border space-y-3 pixel-text text-sm">
+          <h3 class="text-lg font-bold text-primary mb-4">3. 操作步骤</h3>
+          <ol class="list-decimal list-inside text-pixel-border space-y-3 text-sm">
             <li>在"拼豆图纸生成"标签页上传图片</li>
             <li>调整网格大小（10x10到100x100）</li>
             <li>点击"生成拼豆图纸"按钮</li>
@@ -351,7 +364,7 @@
         </div>
       </div>
       <div class="p-6 border-t-4 border-pixel-border flex justify-end">
-        <button id="close-help-btn" class="px-6 py-3 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button pixel-text text-sm">
+        <button id="close-help-btn" class="px-6 py-3 bg-primary text-pixel-bg border-4 border-pixel-border pixel-button text-sm">
           明白了
         </button>
       </div>
@@ -361,7 +374,7 @@
   <!-- Notification -->
   <div id="notification" class="fixed bottom-4 right-4 bg-pixel-panel border-4 border-pixel-border pixel-border px-6 py-4 shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center">
     <i id="notification-icon" class="fa fa-check-circle text-green-500 mr-3 text-xl"></i>
-    <span id="notification-text" class="text-pixel-border pixel-text text-sm">操作成功</span>
+    <span id="notification-text" class="text-pixel-border text-sm">操作成功</span>
   </div>
 
   <!-- Full Screen Preview Modal -->
@@ -390,7 +403,7 @@
       { code: 'A1', name: '米白色', color: '#FAF4C8' },
       { code: 'A2', name: '亮白色', color: '#FFFFDD' },
       { code: 'A3', name: '淡黄色', color: '#FEFF8B' },
-      { code: 'A4', name: '淡黄色', color: '#FEFF8B' },
+      { code: 'A4', name: '黄色', color: '#FBED56' },
       { code: 'A5', name: '金黄色', color: '#F4D738' },
       { code: 'A6', name: '橙色', color: '#FEAC4C' },
       { code: 'A7', name: '深橙色', color: '#FE8B4C' },
@@ -681,6 +694,7 @@
     let currentPattern = null;
     let usedBeads = {};
     let analyzedBeads = {};
+    let myBeads = [];
 
     // DOM 元素
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -712,18 +726,188 @@
     const analyzedBeadsContainer = document.getElementById('analyzed-beads');
     const deductInventoryFromImage = document.getElementById('deduct-inventory-from-image');
     const addInventoryFromImage = document.getElementById('add-inventory-from-image');
+    
+    // 我的拼豆库元素
+    const myBeadsSearch = document.getElementById('my-beads-search');
+    const addToMyBeads = document.getElementById('add-to-my-beads');
+    const myBeadsItems = document.getElementById('my-beads-items');
 
     // 初始化
     document.addEventListener('DOMContentLoaded', function() {
       initializeInventory();
+      initializeMyBeads();
       renderInventory();
+      renderMyBeads();
       setupEventListeners();
     });
 
     // 初始化库存
     function initializeInventory() {
-      beadColors.forEach(bead => {
-        inventory[bead.code] = 1000; // 初始库存1000颗
+      // 尝试从本地存储加载库存数据
+      const savedInventory = localStorage.getItem('perlerInventory');
+      if (savedInventory) {
+        inventory = JSON.parse(savedInventory);
+      } else {
+        // 初始库存1000颗
+        beadColors.forEach(bead => {
+          inventory[bead.code] = 1000;
+        });
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
+      }
+    }
+    
+    // 初始化我的拼豆库
+    function initializeMyBeads() {
+      // 尝试从本地存储加载我的拼豆库数据
+      const savedMyBeads = localStorage.getItem('perlerMyBeads');
+      if (savedMyBeads) {
+        myBeads = JSON.parse(savedMyBeads);
+      } else {
+        // 初始为空
+        myBeads = [];
+        // 保存到本地存储
+        localStorage.setItem('perlerMyBeads', JSON.stringify(myBeads));
+      }
+    }
+    
+    // 渲染我的拼豆库
+    function renderMyBeads() {
+      myBeadsItems.innerHTML = '';
+      
+      if (myBeads.length === 0) {
+        myBeadsItems.innerHTML = '<p class="text-pixel-border p-4 text-sm text-center">暂无拼豆，请搜索并添加</p>';
+        return;
+      }
+      
+      myBeads.forEach(beadCode => {
+        const bead = beadColors.find(b => b.code === beadCode);
+        if (bead) {
+          const item = document.createElement('div');
+          item.className = 'my-bead-item flex flex-col items-center py-3 px-4 border-4 border-pixel-border pixel-border hover:bg-pixel-panel';
+          item.dataset.code = bead.code;
+          
+          item.innerHTML = `
+            <div class="flex flex-col space-y-4 w-full">
+              <div class="w-full relative h-10 border-2 border-pixel-border rounded-lg">
+                <div class="absolute inset-0 flex">
+                  <div class="w-1/2 flex items-center justify-center font-medium text-sm font-black" style="background-color: ${bead.color}; color: #fff; text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">
+                    ${bead.code}
+                  </div>
+                  <div class="w-1/2 flex items-center justify-center text-sm bg-pixel-bg">
+                    ${bead.name}
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between w-full">
+                <span class="inventory-quantity font-medium text-sm font-black ${inventory[bead.code] < 100 ? 'text-red-500' : inventory[bead.code] < 500 ? 'text-yellow-500' : 'text-green-500'}">库存: ${inventory[bead.code]}</span>
+                <div class="flex items-center space-x-2">
+                  <button class="decrease-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button rounded-lg" data-code="${bead.code}">
+                    <i class="fa fa-minus text-pixel-border"></i>
+                  </button>
+                  <input type="number" class="inventory-input w-24 text-center bg-pixel-bg border-2 border-t-0 border-b-0 border-pixel-border text-sm" value="${inventory[bead.code]}" data-code="${bead.code}">
+                  <button class="increase-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button rounded-lg" data-code="${bead.code}">
+                    <i class="fa fa-plus text-pixel-border"></i>
+                  </button>
+                  <button class="remove-from-my-beads px-3 py-1 bg-accent text-pixel-border border-2 border-pixel-border pixel-button rounded-lg" data-code="${bead.code}">
+                    <i class="fa fa-trash text-pixel-border"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          myBeadsItems.appendChild(item);
+        }
+      });
+      
+      // 添加删除按钮事件监听器
+      addMyBeadsEventListeners();
+    }
+    
+    // 添加我的拼豆库事件监听器
+    function addMyBeadsEventListeners() {
+      // 删除按钮
+      document.querySelectorAll('.remove-from-my-beads').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const code = this.dataset.code;
+          myBeads = myBeads.filter(beadCode => beadCode !== code);
+          // 保存到本地存储
+          localStorage.setItem('perlerMyBeads', JSON.stringify(myBeads));
+          renderMyBeads();
+          showNotification('已从我的拼豆库中移除', 'check-circle', 'green-500');
+        });
+      });
+      
+      // 减少按钮
+      document.querySelectorAll('.my-bead-item .decrease-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const code = this.dataset.code;
+          if (inventory[code] >= 10) {
+            inventory[code] -= 10;
+          } else if (inventory[code] > 0) {
+            inventory[code] = 0;
+          }
+          updateInventoryInput(code);
+          // 同时更新主库存列表
+          const inventoryItem = document.querySelector(`.inventory-item[data-code="${code}"]`);
+          if (inventoryItem) {
+            const inventoryInput = inventoryItem.querySelector('.inventory-input');
+            if (inventoryInput) {
+              inventoryInput.value = inventory[code];
+            }
+            const inventoryQuantity = inventoryItem.querySelector('.inventory-quantity');
+            if (inventoryQuantity) {
+              inventoryQuantity.className = `inventory-quantity font-medium text-sm font-black ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
+              inventoryQuantity.textContent = `库存: ${inventory[code]}`;
+            }
+          }
+        });
+      });
+      
+      // 增加按钮
+      document.querySelectorAll('.my-bead-item .increase-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const code = this.dataset.code;
+          inventory[code] += 10;
+          updateInventoryInput(code);
+          // 同时更新主库存列表
+          const inventoryItem = document.querySelector(`.inventory-item[data-code="${code}"]`);
+          if (inventoryItem) {
+            const inventoryInput = inventoryItem.querySelector('.inventory-input');
+            if (inventoryInput) {
+              inventoryInput.value = inventory[code];
+            }
+            const inventoryQuantity = inventoryItem.querySelector('.inventory-quantity');
+            if (inventoryQuantity) {
+              inventoryQuantity.className = `inventory-quantity font-medium text-sm font-black ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
+              inventoryQuantity.textContent = `库存: ${inventory[code]}`;
+            }
+          }
+        });
+      });
+      
+      // 输入框
+      document.querySelectorAll('.my-bead-item .inventory-input').forEach(input => {
+        input.addEventListener('change', function() {
+          const code = this.dataset.code;
+          const value = parseInt(this.value) || 0;
+          inventory[code] = Math.max(0, value);
+          updateInventoryInput(code);
+          // 同时更新主库存列表
+          const inventoryItem = document.querySelector(`.inventory-item[data-code="${code}"]`);
+          if (inventoryItem) {
+            const inventoryInput = inventoryItem.querySelector('.inventory-input');
+            if (inventoryInput) {
+              inventoryInput.value = inventory[code];
+            }
+            const inventoryQuantity = inventoryItem.querySelector('.inventory-quantity');
+            if (inventoryQuantity) {
+              inventoryQuantity.className = `inventory-quantity font-medium text-sm font-black ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
+              inventoryQuantity.textContent = `库存: ${inventory[code]}`;
+            }
+          }
+        });
       });
     }
 
@@ -795,7 +979,10 @@
           }
         });
         
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
         renderInventory();
+        renderMyBeads(); // 更新我的拼豆库中的库存显示
         showNotification('库存扣除成功', 'check-circle', 'green-500');
       });
 
@@ -808,31 +995,32 @@
         
         // 创建canvas用于绘制拼豆图纸
         const size = currentPattern.length;
+        const beadSize = 60; // 每个拼豆60px，提高分辨率
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = size * 30; // 每个拼豆30px
-        canvas.height = size * 30;
+        canvas.width = size * beadSize;
+        canvas.height = size * beadSize;
         
         // 绘制拼豆图纸
         currentPattern.forEach((row, y) => {
           row.forEach((bead, x) => {
             // 绘制背景色
             ctx.fillStyle = bead.color;
-            ctx.fillRect(x * 30, y * 30, 30, 30);
+            ctx.fillRect(x * beadSize, y * beadSize, beadSize, beadSize);
             // 添加网格线
             ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
-            ctx.lineWidth = 1;
-            ctx.strokeRect(x * 30, y * 30, 30, 30);
+            ctx.lineWidth = 2;
+            ctx.strokeRect(x * beadSize, y * beadSize, beadSize, beadSize);
             // 添加色号文本（黑色描边）
             ctx.strokeStyle = '#000';
-            ctx.lineWidth = 1;
-            ctx.font = '10px SimHei, Arial';
+            ctx.lineWidth = 2;
+            ctx.font = '20px SimHei, Arial';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.strokeText(bead.code, x * 30 + 15, y * 30 + 15);
+            ctx.strokeText(bead.code, x * beadSize + beadSize/2, y * beadSize + beadSize/2);
             // 添加白色填充
             ctx.fillStyle = '#fff';
-            ctx.fillText(bead.code, x * 30 + 15, y * 30 + 15);
+            ctx.fillText(bead.code, x * beadSize + beadSize/2, y * beadSize + beadSize/2);
           });
         });
         
@@ -842,8 +1030,23 @@
           const link = document.createElement('a');
           link.href = url;
           link.download = 'bead-pattern.jpg';
-          link.click();
-          URL.revokeObjectURL(url);
+          
+          // 处理移动设备兼容性
+          if (navigator.userAgent.match(/Android/i)) {
+            // 在安卓设备上，使用不同的下载方式
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(function() {
+              document.body.removeChild(link);
+              URL.revokeObjectURL(url);
+            }, 100);
+          } else {
+            // 桌面设备正常下载
+            link.click();
+            URL.revokeObjectURL(url);
+          }
+          
           showNotification('图纸导出成功', 'check-circle', 'green-500');
         }, 'image/jpeg', 0.9);
       });
@@ -865,8 +1068,14 @@
 
       // 重置库存
       resetInventory.addEventListener('click', function() {
-        initializeInventory();
+        // 重置为默认库存1000颗
+        beadColors.forEach(bead => {
+          inventory[bead.code] = 1000;
+        });
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
         renderInventory();
+        renderMyBeads(); // 更新我的拼豆库中的库存显示
         showNotification('库存已重置', 'check-circle', 'green-500');
       });
 
@@ -941,6 +1150,8 @@
           }
         });
         
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
         renderInventory();
         showNotification('库存扣除成功', 'check-circle', 'green-500');
       });
@@ -956,8 +1167,56 @@
           inventory[code] += analyzedBeads[code];
         });
         
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
         renderInventory();
+        renderMyBeads(); // 更新我的拼豆库中的库存显示
         showNotification('库存增加成功', 'check-circle', 'green-500');
+      });
+      
+      // 我的拼豆库 - 搜索功能
+      myBeadsSearch.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const myBeadItems = document.querySelectorAll('.my-bead-item');
+        
+        myBeadItems.forEach(item => {
+          const code = item.dataset.code.toLowerCase();
+          if (code.includes(searchTerm)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+      
+      // 我的拼豆库 - 添加功能
+      addToMyBeads.addEventListener('click', function() {
+        const searchTerm = myBeadsSearch.value.trim().toUpperCase();
+        if (!searchTerm) {
+          showNotification('请输入色号', 'exclamation-circle', 'red-500');
+          return;
+        }
+        
+        // 检查色号是否存在
+        const bead = beadColors.find(b => b.code === searchTerm);
+        if (!bead) {
+          showNotification('色号不存在', 'exclamation-circle', 'red-500');
+          return;
+        }
+        
+        // 检查是否已经在我的拼豆库中
+        if (myBeads.includes(searchTerm)) {
+          showNotification('该色号已在我的拼豆库中', 'exclamation-circle', 'red-500');
+          return;
+        }
+        
+        // 添加到我的拼豆库
+        myBeads.push(searchTerm);
+        // 保存到本地存储
+        localStorage.setItem('perlerMyBeads', JSON.stringify(myBeads));
+        renderMyBeads();
+        myBeadsSearch.value = ''; // 清空搜索框
+        showNotification('已添加到我的拼豆库', 'check-circle', 'green-500');
       });
     }
 
@@ -1297,40 +1556,42 @@
 
     // 渲染库存列表
     function renderInventory() {
-      const container = document.createElement('div');
+      inventoryItems.innerHTML = '';
       
       beadColors.forEach(bead => {
         const item = document.createElement('div');
-        item.className = 'inventory-item flex justify-between items-center py-3 px-4 border-b-2 border-pixel-border hover:bg-pixel-panel';
+        item.className = 'inventory-item flex flex-col items-center py-3 px-4 border-4 border-pixel-border pixel-border hover:bg-pixel-panel';
         item.dataset.code = bead.code;
         
         item.innerHTML = `
-          <div class="flex items-center">
-            <span class="w-32 font-medium pixel-text text-sm">${bead.code}</span>
-            <span class="w-32 flex items-center pixel-text text-sm">
-              <div class="bead-preview" style="background-color: ${bead.color}"></div>
-              ${bead.name}
-            </span>
-          </div>
-          <div class="flex items-center">
-            <span class="w-24 text-center font-medium pixel-text text-sm ${inventory[bead.code] < 100 ? 'text-red-500' : inventory[bead.code] < 500 ? 'text-yellow-500' : 'text-green-500'}">${inventory[bead.code]}</span>
-            <div class="w-48 flex items-center">
-              <button class="decrease-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button" data-code="${bead.code}">
-                <i class="fa fa-minus text-pixel-border"></i>
-              </button>
-              <input type="number" class="inventory-input w-20 text-center bg-pixel-bg border-2 border-t-0 border-b-0 border-pixel-border pixel-text text-sm" value="${inventory[bead.code]}" data-code="${bead.code}">
-              <button class="increase-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button" data-code="${bead.code}">
-                <i class="fa fa-plus text-pixel-border"></i>
-              </button>
+          <div class="flex flex-col space-y-4 w-full">
+            <div class="w-full relative h-10 border-2 border-pixel-border rounded-lg">
+              <div class="absolute inset-0 flex">
+                <div class="w-1/2 flex items-center justify-center font-medium text-sm font-black" style="background-color: ${bead.color}; color: #fff; text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;">
+                  ${bead.code}
+                </div>
+                <div class="w-1/2 flex items-center justify-center text-sm bg-pixel-bg">
+                  ${bead.name}
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between w-full">
+              <span class="inventory-quantity font-medium text-sm font-black ${inventory[bead.code] < 100 ? 'text-red-500' : inventory[bead.code] < 500 ? 'text-yellow-500' : 'text-green-500'}">库存: ${inventory[bead.code]}</span>
+              <div class="flex items-center">
+                <button class="decrease-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button rounded-lg" data-code="${bead.code}">
+                  <i class="fa fa-minus text-pixel-border"></i>
+                </button>
+                <input type="number" class="inventory-input w-24 text-center bg-pixel-bg border-2 border-t-0 border-b-0 border-pixel-border text-sm" value="${inventory[bead.code]}" data-code="${bead.code}">
+                <button class="increase-btn px-2 py-1 bg-pixel-panel border-2 border-pixel-border pixel-button rounded-lg" data-code="${bead.code}">
+                  <i class="fa fa-plus text-pixel-border"></i>
+                </button>
+              </div>
             </div>
           </div>
         `;
         
-        container.appendChild(item);
+        inventoryItems.appendChild(item);
       });
-      
-      inventoryItems.innerHTML = '';
-      inventoryItems.appendChild(container);
       
       // 添加库存操作事件监听器
       addInventoryEventListeners();
@@ -1338,33 +1599,41 @@
 
     // 添加库存操作事件监听器
     function addInventoryEventListeners() {
-      // 减少按钮
-      document.querySelectorAll('.decrease-btn').forEach(btn => {
+      // 减少按钮 - 只为主库存列表添加
+      document.querySelectorAll('.inventory-item .decrease-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const code = this.dataset.code;
-          if (inventory[code] > 0) {
-            inventory[code]--;
-            updateInventoryInput(code);
+          if (inventory[code] >= 10) {
+            inventory[code] -= 10;
+          } else if (inventory[code] > 0) {
+            inventory[code] = 0;
           }
+          updateInventoryInput(code);
+          // 同时更新我的拼豆库
+          renderMyBeads();
         });
       });
       
-      // 增加按钮
-      document.querySelectorAll('.increase-btn').forEach(btn => {
+      // 增加按钮 - 只为主库存列表添加
+      document.querySelectorAll('.inventory-item .increase-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const code = this.dataset.code;
-          inventory[code]++;
+          inventory[code] += 10;
           updateInventoryInput(code);
+          // 同时更新我的拼豆库
+          renderMyBeads();
         });
       });
       
-      // 输入框
-      document.querySelectorAll('.inventory-input').forEach(input => {
+      // 输入框 - 只为主库存列表添加
+      document.querySelectorAll('.inventory-item .inventory-input').forEach(input => {
         input.addEventListener('change', function() {
           const code = this.dataset.code;
           const value = parseInt(this.value) || 0;
           inventory[code] = Math.max(0, value);
           updateInventoryInput(code);
+          // 同时更新我的拼豆库
+          renderMyBeads();
         });
       });
     }
@@ -1377,9 +1646,20 @@
         
         // 更新库存数量的颜色
         const item = document.querySelector(`.inventory-item[data-code="${code}"]`);
-        const quantityElement = item.querySelector('.w-24.text-center');
-        quantityElement.className = `w-24 text-center font-medium ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
-        quantityElement.textContent = inventory[code];
+        const quantityElement = item.querySelector('.inventory-quantity');
+        quantityElement.className = `inventory-quantity font-medium text-sm font-black ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
+        quantityElement.textContent = `库存: ${inventory[code]}`;
+        
+        // 同时更新我的拼豆库中的库存显示
+        const myBeadItem = document.querySelector(`.my-bead-item[data-code="${code}"]`);
+        if (myBeadItem) {
+          const myBeadQuantityElement = myBeadItem.querySelector('.inventory-quantity');
+          myBeadQuantityElement.className = `inventory-quantity font-medium text-sm font-black ${inventory[code] < 100 ? 'text-red-500' : inventory[code] < 500 ? 'text-yellow-500' : 'text-green-500'}`;
+          myBeadQuantityElement.textContent = `库存: ${inventory[code]}`;
+        }
+        
+        // 保存到本地存储
+        localStorage.setItem('perlerInventory', JSON.stringify(inventory));
       }
     }
 
