@@ -1024,30 +1024,63 @@
           });
         });
         
-        // 转换为JPG并下载
+        // 尝试使用blob方式下载
         canvas.toBlob(function(blob) {
+          if (!blob) {
+            showNotification('生成图纸失败，请重试', 'exclamation-circle', 'red-500');
+            return;
+          }
+          
           const url = URL.createObjectURL(blob);
           const link = document.createElement('a');
           link.href = url;
           link.download = 'bead-pattern.jpg';
           
-          // 处理移动设备兼容性
-          if (navigator.userAgent.match(/Android/i)) {
-            // 在安卓设备上，使用不同的下载方式
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            setTimeout(function() {
-              document.body.removeChild(link);
-              URL.revokeObjectURL(url);
-            }, 100);
-          } else {
-            // 桌面设备正常下载
-            link.click();
-            URL.revokeObjectURL(url);
-          }
+          // 检测设备类型
+          const isMobile = navigator.userAgent.match(/Android|iPhone|iPad|iPod/i);
           
-          showNotification('图纸导出成功', 'check-circle', 'green-500');
+          try {
+            if (isMobile) {
+              // 移动设备处理方式 - 使用更可靠的触发方式
+              link.style.display = 'none';
+              document.body.appendChild(link);
+              
+              // 使用dispatchEvent触发点击，更兼容第三方浏览器
+              const event = new MouseEvent('click', {
+                bubbles: true,
+                cancelable: true,
+                view: window
+              });
+              link.dispatchEvent(event);
+              
+              setTimeout(function() {
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+              }, 100);
+              showNotification('图纸已下载，请在相册中查看', 'check-circle', 'green-500');
+            } else {
+              // 桌面设备正常下载
+              link.click();
+              URL.revokeObjectURL(url);
+              showNotification('图纸导出成功', 'check-circle', 'green-500');
+            }
+          } catch (error) {
+            // 下载失败时的备选方案
+            console.error('下载失败:', error);
+            
+            // 尝试使用DataURL作为备选
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+            link.href = dataUrl;
+            
+            try {
+              link.click();
+              showNotification('图纸已下载，请在相册中查看', 'check-circle', 'green-500');
+            } catch (dataUrlError) {
+              // 最终备选：打开新窗口显示图片
+              window.open(dataUrl, '_blank');
+              showNotification('图纸已打开，请手动保存', 'info-circle', 'blue-500');
+            }
+          }
         }, 'image/jpeg', 0.9);
       });
 
